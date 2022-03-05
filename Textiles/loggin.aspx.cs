@@ -31,7 +31,7 @@ namespace Textiles
             if (dr.Read())
             {
 				Session["usuariologueado"] = txtCorreo.Text;
-				Response.Redirect("Administracion.aspx");
+				Response.Redirect("Index_Admin.aspx");
             }
             else
             {

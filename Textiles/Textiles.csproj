@@ -69,10 +69,18 @@
   <ItemGroup>
     <Content Include="Administracion.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="Index_Admin.aspx" />
     <Content Include="loggin.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
     <Compile Include="Administracion.aspx.cs">
       <DependentUpon>Administracion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -86,6 +94,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index_Admin.aspx.cs">
+      <DependentUpon>Index_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index_Admin.aspx.designer.cs">
+      <DependentUpon>Index_Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="loggin.aspx.cs">
       <DependentUpon>loggin.aspx</DependentUpon>
@@ -104,6 +119,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin.Master" />
     <None Include="packages.config" />
     <Content Include="plantilla.Master" />
     <None Include="Web.Debug.config">
