@@ -52,7 +52,6 @@ E:\S5\ProgramacionWEB\Proys\final\Textiles\bin\roslyn\VBCSCompiler.exe
 E:\S5\ProgramacionWEB\Proys\final\Textiles\bin\roslyn\VBCSCompiler.exe.config
 E:\S5\ProgramacionWEB\Proys\final\Textiles\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\S5\ProgramacionWEB\Proys\final\Textiles\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\Textiles.csproj.AssemblyReference.cache
 E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\Textiles.csproj.CoreCompileInputs.cache
 E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\Textiles.dll
 E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\Textiles.pdb
@@ -114,3 +113,4 @@ E:\Universidad\Textiles\Textiles\obj\Debug\Textiles.csproj.AssemblyReference.cac
 E:\Universidad\Textiles\Textiles\obj\Debug\Textiles.csproj.CoreCompileInputs.cache
 E:\Universidad\Textiles\Textiles\obj\Debug\Textiles.dll
 E:\Universidad\Textiles\Textiles\obj\Debug\Textiles.pdb
+E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\Textiles.csproj.AssemblyReference.cache

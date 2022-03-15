@@ -13,7 +13,7 @@ namespace Textiles
         {
             if (Session["usuariologueado"] != null)
             {
-                lblPresent.Text = Session["usuariologueado"].ToString();
+                //lblPresent.Text = Session["usuariologueado"].ToString();
             }
             else
             {

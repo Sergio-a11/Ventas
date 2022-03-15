@@ -71,6 +71,7 @@
     <Content Include="index.aspx" />
     <Content Include="Index_Admin.aspx" />
     <Content Include="loggin.aspx" />
+    <Content Include="NuevaCompra.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +89,7 @@
     <Compile Include="Administracion.aspx.designer.cs">
       <DependentUpon>Administracion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConectarBD.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,6 +110,13 @@
     </Compile>
     <Compile Include="loggin.aspx.designer.cs">
       <DependentUpon>loggin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaCompra.aspx.cs">
+      <DependentUpon>NuevaCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevaCompra.aspx.designer.cs">
+      <DependentUpon>NuevaCompra.aspx</DependentUpon>
     </Compile>
     <Compile Include="plantilla.Master.cs">
       <DependentUpon>plantilla.Master</DependentUpon>
