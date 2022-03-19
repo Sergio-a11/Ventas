@@ -114,3 +114,4 @@ E:\Universidad\Textiles\Textiles\obj\Debug\Textiles.csproj.CoreCompileInputs.cac
 E:\Universidad\Textiles\Textiles\obj\Debug\Textiles.dll
 E:\Universidad\Textiles\Textiles\obj\Debug\Textiles.pdb
 E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\Textiles.csproj.AssemblyReference.cache
+E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\Textiles.csproj.CopyComplete

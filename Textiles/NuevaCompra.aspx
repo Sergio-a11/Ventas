@@ -3,45 +3,55 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
-    <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="SqlDataSource2" Height="50px" Width="287px">
+    <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="Id" DataSourceID="compras" Height="88px" Width="379px" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
+        <EditRowStyle BackColor="#999999" />
+        <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
         <Fields>
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
-            <asp:BoundField DataField="direccion" HeaderText="direccion" SortExpression="direccion" />
-            <asp:BoundField DataField="telefono" HeaderText="telefono" SortExpression="telefono" />
-            <asp:BoundField DataField="correo" HeaderText="correo" SortExpression="correo" />
-            <asp:BoundField DataField="rol" HeaderText="rol" SortExpression="rol" />
-            <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+            <asp:BoundField DataField="fecha" HeaderText="Fecha de compra" SortExpression="fecha" />
+            <asp:BoundField DataField="cantidad" HeaderText="Cantidad" SortExpression="cantidad" />
+            <asp:BoundField DataField="id_tela" HeaderText="id_tela" SortExpression="id_tela" />
+            <asp:BoundField DataField="id_producto" HeaderText="Producto ID" SortExpression="id_producto" />
+            <asp:BoundField DataField="observaciones" HeaderText="Observaciones" SortExpression="observaciones" />
+            <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True">
+            <ControlStyle BackColor="#284775" BorderColor="#216CAF" BorderStyle="Solid" BorderWidth="3px" Font-Names="Dubai" ForeColor="White" />
+            </asp:CommandField>
         </Fields>
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
     </asp:DetailsView>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:textilesConnectionString1 %>" DeleteCommand="DELETE FROM [usuario] WHERE [Id] = @original_Id AND (([nombre] = @original_nombre) OR ([nombre] IS NULL AND @original_nombre IS NULL)) AND (([direccion] = @original_direccion) OR ([direccion] IS NULL AND @original_direccion IS NULL)) AND (([telefono] = @original_telefono) OR ([telefono] IS NULL AND @original_telefono IS NULL)) AND (([correo] = @original_correo) OR ([correo] IS NULL AND @original_correo IS NULL)) AND (([rol] = @original_rol) OR ([rol] IS NULL AND @original_rol IS NULL))" InsertCommand="INSERT INTO [usuario] ([nombre], [direccion], [telefono], [correo], [rol]) VALUES (@nombre, @direccion, @telefono, @correo, @rol)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [usuario]" UpdateCommand="UPDATE [usuario] SET [nombre] = @nombre, [direccion] = @direccion, [telefono] = @telefono, [correo] = @correo, [rol] = @rol WHERE [Id] = @original_Id AND (([nombre] = @original_nombre) OR ([nombre] IS NULL AND @original_nombre IS NULL)) AND (([direccion] = @original_direccion) OR ([direccion] IS NULL AND @original_direccion IS NULL)) AND (([telefono] = @original_telefono) OR ([telefono] IS NULL AND @original_telefono IS NULL)) AND (([correo] = @original_correo) OR ([correo] IS NULL AND @original_correo IS NULL)) AND (([rol] = @original_rol) OR ([rol] IS NULL AND @original_rol IS NULL))">
+    <asp:SqlDataSource ID="compras" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:textilesConnectionString %>" DeleteCommand="DELETE FROM [compra] WHERE [Id] = @original_Id AND (([fecha] = @original_fecha) OR ([fecha] IS NULL AND @original_fecha IS NULL)) AND (([cantidad] = @original_cantidad) OR ([cantidad] IS NULL AND @original_cantidad IS NULL)) AND (([id_tela] = @original_id_tela) OR ([id_tela] IS NULL AND @original_id_tela IS NULL)) AND (([id_producto] = @original_id_producto) OR ([id_producto] IS NULL AND @original_id_producto IS NULL)) AND (([observaciones] = @original_observaciones) OR ([observaciones] IS NULL AND @original_observaciones IS NULL))" InsertCommand="INSERT INTO [compra] ([fecha], [cantidad], [id_tela], [id_producto], [observaciones]) VALUES (@fecha, @cantidad, @id_tela, @id_producto, @observaciones)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [compra]" UpdateCommand="UPDATE [compra] SET [fecha] = @fecha, [cantidad] = @cantidad, [id_tela] = @id_tela, [id_producto] = @id_producto, [observaciones] = @observaciones WHERE [Id] = @original_Id AND (([fecha] = @original_fecha) OR ([fecha] IS NULL AND @original_fecha IS NULL)) AND (([cantidad] = @original_cantidad) OR ([cantidad] IS NULL AND @original_cantidad IS NULL)) AND (([id_tela] = @original_id_tela) OR ([id_tela] IS NULL AND @original_id_tela IS NULL)) AND (([id_producto] = @original_id_producto) OR ([id_producto] IS NULL AND @original_id_producto IS NULL)) AND (([observaciones] = @original_observaciones) OR ([observaciones] IS NULL AND @original_observaciones IS NULL))">
         <DeleteParameters>
             <asp:Parameter Name="original_Id" Type="Int32" />
-            <asp:Parameter Name="original_nombre" Type="String" />
-            <asp:Parameter Name="original_direccion" Type="String" />
-            <asp:Parameter Name="original_telefono" Type="String" />
-            <asp:Parameter Name="original_correo" Type="String" />
-            <asp:Parameter Name="original_rol" Type="String" />
+            <asp:Parameter DbType="Date" Name="original_fecha" />
+            <asp:Parameter Name="original_cantidad" Type="Int32" />
+            <asp:Parameter Name="original_id_tela" Type="Int32" />
+            <asp:Parameter Name="original_id_producto" Type="Int32" />
+            <asp:Parameter Name="original_observaciones" Type="String" />
         </DeleteParameters>
         <InsertParameters>
-            <asp:Parameter Name="nombre" Type="String" />
-            <asp:Parameter Name="direccion" Type="String" />
-            <asp:Parameter Name="telefono" Type="String" />
-            <asp:Parameter Name="correo" Type="String" />
-            <asp:Parameter Name="rol" Type="String" />
+            <asp:Parameter DbType="Date" Name="fecha" />
+            <asp:Parameter Name="cantidad" Type="Int32" />
+            <asp:Parameter Name="id_tela" Type="Int32" />
+            <asp:Parameter Name="id_producto" Type="Int32" />
+            <asp:Parameter Name="observaciones" Type="String" />
         </InsertParameters>
         <UpdateParameters>
-            <asp:Parameter Name="nombre" Type="String" />
-            <asp:Parameter Name="direccion" Type="String" />
-            <asp:Parameter Name="telefono" Type="String" />
-            <asp:Parameter Name="correo" Type="String" />
-            <asp:Parameter Name="rol" Type="String" />
+            <asp:Parameter DbType="Date" Name="fecha" />
+            <asp:Parameter Name="cantidad" Type="Int32" />
+            <asp:Parameter Name="id_tela" Type="Int32" />
+            <asp:Parameter Name="id_producto" Type="Int32" />
+            <asp:Parameter Name="observaciones" Type="String" />
             <asp:Parameter Name="original_Id" Type="Int32" />
-            <asp:Parameter Name="original_nombre" Type="String" />
-            <asp:Parameter Name="original_direccion" Type="String" />
-            <asp:Parameter Name="original_telefono" Type="String" />
-            <asp:Parameter Name="original_correo" Type="String" />
-            <asp:Parameter Name="original_rol" Type="String" />
+            <asp:Parameter DbType="Date" Name="original_fecha" />
+            <asp:Parameter Name="original_cantidad" Type="Int32" />
+            <asp:Parameter Name="original_id_tela" Type="Int32" />
+            <asp:Parameter Name="original_id_producto" Type="Int32" />
+            <asp:Parameter Name="original_observaciones" Type="String" />
         </UpdateParameters>
-    </asp:SqlDataSource>
+</asp:SqlDataSource>
 </asp:Content>

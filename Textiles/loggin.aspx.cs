@@ -17,7 +17,7 @@ namespace Textiles
 			
 		}
 
-		String patron = "InfoToolsSV";
+		String patron = "ArrastrarYsoltar";
         protected void btnIniciar_Click(object sender, EventArgs e)
         {
 			String conectar = ConfigurationManager.ConnectionStrings["textilesConnectionString"].ConnectionString;
