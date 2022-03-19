@@ -30,7 +30,7 @@
                                     <a class="nav-link active" aria-current="page" href="Index_Admin.aspx">Inicio</a>
                                 </li>
                                 <li class="nav-item col-6 col-md-auto">
-                                    <a class="nav-link" href="#">Inventario</a>
+                                    <a class="nav-link" href="Inventario.aspx">Inventario</a>
                                 </li>
                                 <li class="nav-item col-6 col-md-auto">
                                     <a class="nav-link" href="Venta.aspx">Ventas</a>
@@ -39,13 +39,16 @@
                                     <a class="nav-link" href="NuevaCompra.aspx">Compras</a>
                                 </li>
                                 <li class="nav-item col-6 col-md-auto">
-                                    <a class="nav-link" href="#">Clientes</a>
+                                    <a class="nav-link" href="Cliente.aspx">Clientes</a>
                                 </li>
                                 <li class="nav-item col-6 col-md-auto">
-                                    <a class="nav-link" href="#">Proveedores</a>
+                                    <a class="nav-link" href="Proveedor.aspx">Proveedores</a>
                                 </li>
                                 <li class="nav-item col-6 col-md-auto">
                                     <a class="nav-link" href="Producto.aspx">Productos</a>
+                                </li>
+                                <li class="nav-item col-6 col-md-auto">
+                                    <a class="nav-link" href="ReportesVentas.aspx">Reporte Ventas</a>
                                 </li>
                             </ul>
                             <hr class="d-md-none text-white-50">
