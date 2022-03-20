@@ -91,6 +91,7 @@
   <ItemGroup>
     <Content Include="Administracion.aspx" />
     <Content Include="Cliente.aspx" />
+    <Content Include="css\loggin.css" />
     <Content Include="index.aspx" />
     <Content Include="Index_Admin.aspx" />
     <Content Include="Inventario.aspx" />
@@ -240,6 +241,7 @@
   <ItemGroup>
     <EmbeddedResource Include="ReporteVentas.rdlc" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
