@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Administracion.aspx" />
+    <Content Include="Carrito.aspx" />
     <Content Include="Cliente.aspx" />
     <Content Include="css\loggin.css" />
     <Content Include="index.aspx" />
@@ -114,6 +115,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Venta.aspx" />
+    <Content Include="VistaProducto.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +132,13 @@
     </Compile>
     <Compile Include="Administracion.aspx.designer.cs">
       <DependentUpon>Administracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cliente.aspx.cs">
       <DependentUpon>Cliente.aspx</DependentUpon>
@@ -214,6 +223,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Ventas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="VistaProducto.aspx.cs">
+      <DependentUpon>VistaProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistaProducto.aspx.designer.cs">
+      <DependentUpon>VistaProducto.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

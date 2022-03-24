@@ -24,7 +24,7 @@ namespace Textiles
         protected void btnCerrrar_Click(object sender, EventArgs e)
         {
             Session.Remove("usuariologueado");
-            Response.Redirect("loggin.aspx");
+            Response.Redirect("index.aspx");
         }
     }
 }

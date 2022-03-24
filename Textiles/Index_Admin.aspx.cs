@@ -32,7 +32,7 @@ namespace Textiles
         protected void btnFlitro_Click(object sender, EventArgs e)
         {
             int pedido = int.Parse(txtFiltro.Text);
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\S5\\ProgramacionWEB\\Proys\\final\\Textiles\\bd\\textiles.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Universidad\\Textiles\\Textiles\\bd\\textiles.mdf;Integrated Security=True;Connect Timeout=30;Integrated Security=True;Connect Timeout=30");
             String query = "SELECT nombre, cantidad FROM venta join producto  on venta.id_producto = producto.Id where venta.Id=@n";
             SqlCommand command = new SqlCommand(query);
             command.Parameters.AddWithValue("@n", pedido);
