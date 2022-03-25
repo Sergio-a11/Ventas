@@ -196,4 +196,4 @@ E:\Universidad\Textiles\Textiles\bin\zh-CHS\Microsoft.ReportViewer.WinForms.reso
 E:\Universidad\Textiles\Textiles\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 E:\Universidad\Textiles\Textiles\obj\Debug\RdlCompile.cache
 E:\Universidad\Textiles\Textiles\obj\Debug\RdlCompile.compiled
-E:\Universidad\Textiles\Textiles\obj\Debug\Textiles.csproj.AssemblyReference.cache
+E:\Universidad\Textiles\Textiles\obj\Debug\Textiles.csproj.CopyComplete
