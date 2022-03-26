@@ -4,4 +4,5 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="lblLista" runat="server" Text="Label"></asp:Label>
     <br />
+    <asp:Button ID="btnMuestrario" runat="server" OnClick="btnMuestrario_Click" Text="Muestrario" />
     </asp:Content>

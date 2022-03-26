@@ -17,9 +17,8 @@ namespace Textiles
         public static ArrayList listaCompras = new ArrayList();
         protected void Page_Load(object sender, EventArgs e)
         {
-              listaIDs.Clear();
               listaIDs = (ArrayList)Session["ListaCompras"];
-
+              listaCompras.Clear();
               SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Universidad\\Textiles\\Textiles\\bd\\textiles.mdf;Integrated Security=True;Connect Timeout=30;Integrated Security=True;Connect Timeout=30");
               foreach (string id in listaIDs)
               {
@@ -28,6 +27,7 @@ namespace Textiles
                   command.Connection = con;
                   con.Open();
                   SqlDataReader reader = command.ExecuteReader();
+                  bool existente = false;
                   while (reader.Read())
                   {
                       int identificacion = reader.GetInt32(0);
@@ -35,8 +35,20 @@ namespace Textiles
                       String talla = reader.GetString(2);
                       decimal precio = reader.GetDecimal(3);
                       String observaciones = reader.GetString(4);
-                      ClaseProducto pr = new ClaseProducto(identificacion,nombre,talla,precio,observaciones);
-                      listaCompras.Add(pr);                      
+                      foreach (ClaseProducto p in listaCompras)
+                      {
+                          if (identificacion == p.Identificacion)
+                          {
+                              existente = true;
+                              p.Cantidad = p.Cantidad + 1;
+                          }
+                      }
+                      if (existente == false)
+                      {
+                          ClaseProducto pr = new ClaseProducto(identificacion, nombre, talla, precio, observaciones, 1);
+                          listaCompras.Add(pr);
+                      }
+                    existente = false;
                   }
                 con.Close();
                 command.Dispose();
@@ -51,6 +63,7 @@ namespace Textiles
                 tabla += "<th>Talla</th>";
                 tabla += "<th>Precio</th>";
                 tabla += "<th>Observaciones</th>";
+                tabla += "<th>Cantidad</th>";
                 tabla += "</tr>";
                 foreach (ClaseProducto l in listaCompras)
                 {
@@ -60,6 +73,7 @@ namespace Textiles
                     tabla += "<td>" + l.Talla + "</td>";
                     tabla += "<td>" + l.Precio + "</td>";
                     tabla += "<td>" + l.Observaciones + "</td>";
+                    tabla += "<td>" + l.Cantidad + "</td>";
                     tabla += "</tr>";
                 }
 
@@ -73,6 +87,10 @@ namespace Textiles
             
         }
 
-        
+        protected void btnMuestrario_Click(object sender, EventArgs e)
+        {
+            Session.Add("ListaCompras", listaIDs);
+            Server.Transfer("index.aspx");
+        }
     }
 }
