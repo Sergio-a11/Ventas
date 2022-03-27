@@ -277,4 +277,4 @@ E:\S5\ProgramacionWEB\Proys\final\Textiles\bin\zh-CHS\Microsoft.ReportViewer.Win
 E:\S5\ProgramacionWEB\Proys\final\Textiles\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\RdlCompile.cache
 E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\RdlCompile.compiled
-E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\Textiles.csproj.CopyComplete
+E:\S5\ProgramacionWEB\Proys\final\Textiles\obj\Debug\Textiles.csproj.AssemblyReference.cache

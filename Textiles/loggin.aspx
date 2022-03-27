@@ -30,17 +30,17 @@
             <br />
             <br />
             <br />
-            <asp:Label class="input" ID="Label1" runat="server" Text="Correo:" BackColor="#9966FF" ForeColor="White" BorderColor="White" BorderWidth="3px"></asp:Label>
+            <asp:Label class="input" ID="Label1" runat="server" Text="Correo:" BackColor="#0275D8" ForeColor="White" BorderColor="White" BorderWidth="3px"></asp:Label>
             &nbsp;
-            <asp:TextBox class="input" ID="txtCorreo" runat="server" TextMode="Email" BorderColor="Black" BorderWidth="3px"></asp:TextBox>
+            <asp:TextBox class="input" ID="txtCorreo" runat="server" TextMode="Email" BorderColor="#0275D8" BorderWidth="2px"></asp:TextBox>
             <br />
             <br />
-            <asp:Label class="input" ID="Label2" runat="server" Text="Contraseña:" BackColor="#A078FE" ForeColor="White" BorderColor="White" BorderWidth="3px"></asp:Label>
+            <asp:Label class="input" ID="Label2" runat="server" Text="Contraseña:" BackColor="#0275D8" ForeColor="White" BorderColor="White" BorderWidth="3px"></asp:Label>
             &nbsp;
-            <asp:TextBox class="input" ID="txtContrasena" runat="server" TextMode="Password" BorderColor="Black" BorderWidth="3px"></asp:TextBox>
+            <asp:TextBox class="input" ID="txtContrasena" runat="server" TextMode="Password" BorderColor="#0275D8" BorderWidth="2px"></asp:TextBox>
             <br />
             <br />
-            <asp:Button class="submit" ID="btnIniciar" runat="server" OnClick="btnIniciar_Click" Text="Iniciar" BackColor="#FF9933" Font-Names="Dubai" Font-Size="XX-Large" ForeColor="White" Height="57px" Width="408px" />
+            <asp:Button class="submit" ID="btnIniciar" runat="server" OnClick="btnIniciar_Click" Text="Iniciar" BackColor="#0275D8" Font-Names="Dubai" Font-Size="XX-Large" ForeColor="White" Height="57px" Width="408px" />
             <br />
             <br />
             <asp:Label ID="lblError" runat="server"></asp:Label>

@@ -13,7 +13,7 @@
         </asp:ChartArea>
     </chartareas>
 </asp:Chart>
-<asp:Label ID="Label1" runat="server" Text="Productos Vendidos  "></asp:Label>
+<asp:Label ID="Label1" runat="server" Text="Productos Vendidos  ID VENTA"></asp:Label>
 <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
 <asp:Button ID="btnFlitro" runat="server" OnClick="btnFlitro_Click" Text="Filtrar" />
 </asp:Content>

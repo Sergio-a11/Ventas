@@ -57,7 +57,28 @@ namespace Textiles
                     command.Dispose();
                 }
 
-                if (listaCompras != null)
+                String query2 = "select producto.id,ISNULL((select SUM (compra.cantidad) from compra where compra.id_producto=producto.Id)-ISNULL((select SUM (venta.cantidad) from venta where venta.id_producto=producto.Id),0),0) as CantidadTotal from producto where ISNULL((select SUM (compra.cantidad) from compra where compra.id_producto=producto.Id)-ISNULL((select SUM (venta.cantidad) from venta where venta.id_producto=producto.Id),0),0) > 0;";
+                SqlCommand command2 = new SqlCommand(query2);
+                command2.Connection = con;
+                con.Open();
+                SqlDataReader reader2 = command2.ExecuteReader();
+
+                while (reader2.Read())
+                { 
+                    foreach(ClaseProducto listaC in listaCompras)
+                    {
+                        if(listaC.Identificacion == reader2.GetInt32(0))
+                        {
+                            if(listaC.Cantidad > reader2.GetInt32(1))
+                            {
+                                listaC.Cantidad = reader2.GetInt32(1);
+                                lblCantidad.Text += "El producto con id "+ reader2.GetInt32(0) + " excede las unidades\n";
+                            }
+                        }
+                    }
+                }
+
+                    if (listaCompras != null)
                 {
                     String tabla = "<table border=1 bordercolor=blue>";
                     tabla += "<tr>";

@@ -16,6 +16,25 @@ namespace Textiles
             if (Session["usuariologueado"] != null)
             {
                 //lblPresent.Text = Session["usuariologueado"].ToString();
+                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\S5\\ProgramacionWEB\\Proys\\final\\Textiles\\bd\\Textiles.mdf;Integrated Security=True;Connect Timeout=30");
+                String query = "SELECT nombre, cantidad FROM venta join producto on venta.id_producto = producto.Id";
+                SqlCommand command = new SqlCommand(query);
+                command.Connection = con;
+                con.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                ArrayList unds = new ArrayList();
+                ArrayList prod = new ArrayList();
+                while (reader.Read())
+                {
+                    prod.Add(reader.GetString(0));
+                    unds.Add(Convert.ToInt32(reader.GetInt32(1)));
+                }
+                reader.Close();
+                con.Close();
+                command.Dispose();
+                //txtFiltro.Text = prod.ToString() + unds.ToString();
+                ventas.Series["Series1"].Points.DataBindXY(prod, unds);
             }
             else
             {
@@ -50,7 +69,7 @@ namespace Textiles
             reader.Close();
             con.Close();
             command.Dispose();
-            txtFiltro.Text = prod.ToString() + unds.ToString();
+            //txtFiltro.Text = prod.ToString() + unds.ToString();
             ventas.Series["Series1"].Points.DataBindXY(prod, unds);
         }
     }

@@ -27,4 +27,6 @@
     <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
     <br />
     <asp:Button ID="btnFinalizar" runat="server"  Text="Finalizar Compra" OnClick="btnFinalizar_Click" />
+    <br />
+    <asp:Label ID="lblCantidad" runat="server"></asp:Label>
     </asp:Content>
