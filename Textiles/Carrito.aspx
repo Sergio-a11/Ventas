@@ -4,6 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="lblLista" runat="server" Text="Label"></asp:Label>
     <br />
+    <asp:Label ID="Label6" runat="server" Text="Eliminar Producto"></asp:Label>
+    <asp:TextBox ID="txtEliminarProducto" runat="server"></asp:TextBox>
+    <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar Producto" />
     <br />
     <asp:Label ID="Label1" runat="server" Text="Datos Cliente:"></asp:Label>
     <br />

@@ -20,7 +20,7 @@ namespace Textiles
             if (Session["ListaCompras"]!=null) { 
                   listaIDs = (ArrayList)Session["ListaCompras"];
                   listaCompras.Clear();
-                  SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Universidad\\Textiles\\Textiles\\bd\\textiles.mdf;Integrated Security=True;Connect Timeout=30;Integrated Security=True;Connect Timeout=30");
+                  SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\S5\\ProgramacionWEB\\Proys\\final\\Textiles\\bd\\Textiles.mdf;Integrated Security=True;Connect Timeout=30");
                   foreach (string id in listaIDs)
                   {
                       String query = "SELECT * FROM producto WHERE Id=" + id;
@@ -97,7 +97,7 @@ namespace Textiles
 
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Universidad\\Textiles\\Textiles\\bd\\textiles.mdf;Integrated Security=True;Connect Timeout=30;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\S5\\ProgramacionWEB\\Proys\\final\\Textiles\\bd\\Textiles.mdf;Integrated Security=True;Connect Timeout=300");
             String query = "SELECT * FROM clientes WHERE nombre_completo='"+txtNombre.Text+"' AND direccion='"+txtDireccion.Text+"' AND telefono='"+txtTelefono.Text+"' AND correo='"+txtCorreo.Text+"'";
             SqlCommand command = new SqlCommand(query);
             command.Connection = con;
@@ -151,13 +151,21 @@ namespace Textiles
                 reader.Close();
 
                 commandInsert.Connection = con;
-                commandInsert.ExecuteReader();
+                commandInsert.ExecuteNonQuery();
                 commandInsert.Dispose();
 
-                insertar = "SELECT * FROM clientes WHERE nombre_completo=" + txtNombre.Text + " AND direccion=" + txtDireccion.Text + " AND telefono=" + txtTelefono.Text + " AND correo=" + txtCorreo.Text;
-                commandInsert = new SqlCommand(insertar);
-                commandInsert.Connection = con;
-                SqlDataReader reader1 = commandInsert.ExecuteReader();
+                insertar = "SELECT * FROM clientes WHERE nombre_completo='" + txtNombre.Text + "' AND direccion='" + txtDireccion.Text + "' AND telefono='" + txtTelefono.Text + "' AND correo='" + txtCorreo.Text+"'";
+                SqlCommand commandInsert2 = new SqlCommand(insertar);
+                reader.Close();
+                commandInsert2.Connection = con;
+                SqlDataReader sqlDataReader = commandInsert2.ExecuteReader();
+                int id = 0;
+                if (sqlDataReader.Read())
+                {
+                    id = sqlDataReader.GetInt32(0);
+                }
+                commandInsert2.Dispose();
+                sqlDataReader.Close();
                 String insertarExistente = "INSERT INTO venta (fecha, cantidad, id_cliente, id_producto, observaciones) VALUES ";
 
                 int i = 1;
@@ -171,28 +179,37 @@ namespace Textiles
                     i++;
 
                 }
-                SqlCommand commandInsertExistente = new SqlCommand(insertar);
+                SqlCommand commandInsertExistente = new SqlCommand(insertarExistente);
                 i = 1;
                 foreach (ClaseProducto p in listaCompras)
                 {
                     commandInsertExistente.Parameters.AddWithValue("@fecha" + i, DateTime.Now);
                     commandInsertExistente.Parameters.AddWithValue("@cantidad" + i, p.Cantidad);
-                    commandInsertExistente.Parameters.AddWithValue("@id_cliente" + i, reader.GetInt32(0));
+                    commandInsertExistente.Parameters.AddWithValue("@id_cliente" + i, id);
                     commandInsertExistente.Parameters.AddWithValue("@id_producto" + i, p.Identificacion);
                     commandInsertExistente.Parameters.AddWithValue("@observaciones" + i, p.Observaciones);
                     i++;
                     Console.WriteLine(insertar);
 
                 }
-
+                commandInsertExistente.Connection = con;
+                commandInsertExistente.ExecuteReader();
+                commandInsertExistente.Dispose();
             }
-
             con.Close();
             reader.Close();
             command.Dispose();
             listaIDs.Clear();
             listaCompras.Clear();
+            Server.Transfer("index.aspx");
         }
-        
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int index = listaIDs.IndexOf(txtEliminarProducto.Text);
+            listaIDs.RemoveAt(index);
+            Session.Add("ListaCompras", listaIDs);
+            Server.Transfer("Carrito.aspx");
+        }
     }
 }
